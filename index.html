@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Séquence</title>
+    <script type="text/javascript" src="config.js" defer></script>
+    <script
+      type="text/javascript"
+      src="https://b82b1763d1c3.eu-west-3.captcha-sdk.awswaf.com/b82b1763d1c3/jsapi.js"
+      defer
+    ></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      #output {
+        margin-top: 20px;
+      }
+      #my-captcha-container {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Générateur de Séquence</h1>
+    <form id="sequenceForm">
+      <label for="numberInput">Entrez un nombre (1-1000) :</label>
+      <input type="number" id="numberInput" min="1" max="1000" required />
+      <button type="submit">Soumettre</button>
+    </form>
+    <div id="output"></div>
+    <div id="my-captcha-container"></div>
+  </body>
+</html>
