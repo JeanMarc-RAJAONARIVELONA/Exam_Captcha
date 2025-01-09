@@ -7,7 +7,7 @@
     <script type="text/javascript" src="./config.js" defer></script>
     <script
       type="text/javascript"
-      src="https://b82b1763d1c3.eu-west-3.captcha-sdk.awswaf.com/b82b1763d1c3/jsapi.js"
+      src="https://09bd26e5e726.eu-west-3.captcha-sdk.awswaf.com/09bd26e5e726/jsapi.js"
       defer
     ></script>
     <style>
@@ -120,7 +120,10 @@
       function captchaExampleSuccessFunction(wafToken) {
         const overlay = document.querySelector(".overlay");
         if (overlay) overlay.remove();
-        AwsWafIntegration.fetch("...WAF-protected URL...", {
+
+        AwsWafIntegration.setWafToken(wafToken);
+
+        fetch("https://api.prod.jcloudify.com/whoami", {
           method: "POST",
         }).then(() => {
           if (window.captchaResolved) window.captchaResolved();
